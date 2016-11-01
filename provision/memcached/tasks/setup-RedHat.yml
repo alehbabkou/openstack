@@ -1,0 +1,6 @@
+---
+
+- name: Ensure Memcached is installed on RHEL.
+  yum:
+    name: memcached
+    state: installed

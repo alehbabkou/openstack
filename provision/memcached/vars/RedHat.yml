@@ -1,0 +1,5 @@
+---
+package_state: "present"
+
+memcached_service_info:
+  name: memcached

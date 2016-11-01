@@ -1,0 +1,15 @@
+---
+
+# Include variables and define needed variables.
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+  # Setup/install tasks.
+- include: "setup-{{ ansible_os_family }}.yml"
+
+- name: ensure memcached service is started and enabled
+  service:
+    name: "{{ memcached_service_info.name }}"
+    enabled: yes
+    state: started
+    pattern: memcached
