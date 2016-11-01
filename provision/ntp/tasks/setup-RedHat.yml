@@ -1,0 +1,8 @@
+---
+
+- name: Ensure Chrony is installed on RHEL.
+  yum:
+    name: "{{ item }}"
+    state: installed
+    enablerepo: "{{ chrony_enablerepo }}"
+  with_items: "{{ chrony_packages }}"
