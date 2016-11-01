@@ -12,9 +12,6 @@
 # Setup/install tasks.
 - include: "setup-{{ ansible_os_family }}.yml"
 
-# Configure Chrony.
-- include: "configure-{{ ansible_os_family }}.yml"
-
 - name: update chrony.conf from template
   template:
     src: chrony.conf
