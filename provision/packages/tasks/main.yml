@@ -1,0 +1,32 @@
+---
+  - name: Install epel repositories
+    become: yes
+    yum:
+      name: epel-release
+      state: latest
+
+  - name: Install centos-release-scl-rh
+    become: yes
+    yum:
+      name: centos-release-scl-rh
+      state: latest
+
+  - name: install centos-release-openstack-newton
+    become:
+    yum:
+      name: centos-release-openstack-newton
+      state: latest
+
+  - name: update YUM repositories
+    become: yes
+    yum:
+      name: "*"
+      state: "{{ package_state }}"
+      update_cache: yes
+
+  - name: Ensure necessary packages are installed
+    become: yes
+    yum:
+      name: "{{ item  }}"
+      state: "{{ package_state }}"
+    with_items: "{{ packages }}"

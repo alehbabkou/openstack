@@ -1,0 +1,5 @@
+---
+  package_state: "present"
+  packages:
+    - python-openstackclient
+    - openstack-selinux
