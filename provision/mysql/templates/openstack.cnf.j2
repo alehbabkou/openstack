@@ -1,0 +1,7 @@
+[mysqld]
+bind-address = {{ mysql_bind_address }}
+default-storage-engine ={{ openstack_default_storage_engine }}
+innodb_file_per_table
+max_connections = {{ mysql_max_connections }}
+collation-server = {{ collation }}
+character-set-server = {{ encoding }}
