@@ -1,0 +1,15 @@
+---
+rabbitmq_configs: []
+#  - rabbitmq.config
+rabbitmq_files_path: ../../files/rabbitmq/
+rabbitmq_login_host: localhost
+rabbitmq_login_password: openstack
+rabbitmq_login_user: openstack
+rabbitmq_plugins: []
+#  - rabbitmq_management
+rabbitmq_rabbitmqadmin_path: /usr/local/bin/rabbitmqadmin
+rabbitmq_vhosts: []
+
+rabbitmq_user: openstack
+rabbitmq_password: RABBIT_PASS
+rabbitmq_permissions: '".*" ".*" ".*"'

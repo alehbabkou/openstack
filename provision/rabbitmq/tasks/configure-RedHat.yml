@@ -1,0 +1,14 @@
+---
+
+- name: Check for rabbitmq users
+  command: rabbitmqctl list_user_permissions {{ rabbitmq_user }}
+  ignore_errors: true
+  register: user_exists
+
+- name: Create rabbitmq user
+  command: rabbitmqctl add_user {{ rabbitmq_user }} {{ rabbitmq_password }}
+  when: user_exists | failed
+
+- name: Permit configuration, write, and read access for user
+  command: rabbitmqctl set_permissions {{ rabbitmq_user }} {{ rabbitmq_permissions }}
+

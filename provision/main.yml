@@ -4,5 +4,6 @@
   become: yes
   roles:
     - ntp
-    - packages
+   # - packages
     - memcached
+    - rabbitmq
