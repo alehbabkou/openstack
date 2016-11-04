@@ -1,0 +1,8 @@
+---
+
+- shell: rabbitmqctl list_users | grep sensu
+  register: test_result
+- name: ensure the sensu user was added
+  assert:
+    that:
+      - "{{ test_result.rc }} == 0"
