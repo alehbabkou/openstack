@@ -1,5 +1,0 @@
----
-package_state: "present"
-
-rabbitmq_service_info:
-  name: rabbitmq-server

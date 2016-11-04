@@ -6,5 +6,5 @@
     - ntp
     - packages
     - memcached
-    #- rabbitmq
+    - rabbitmq
     - mysql

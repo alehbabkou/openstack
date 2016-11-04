@@ -1,18 +1,8 @@
 ---
-
-# Include variables and define needed variables.
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
-
-  # Setup/install tasks.
-- include: "setup-{{ ansible_os_family }}.yml"
-
-# Configure tasks.
-- include: "configure-{{ ansible_os_family }}.yml"
-
-- name: ensure rabbitmq-server service is started and enabled
-  service:
-    name: "{{ rabbitmq_service_info.name }}"
-    enabled: yes
-    state: started
-    pattern: rabbitmq-server
+- include: install/main.yml
+- include: configuration.yml
+- include: plugins.yml
+- include: vhost.yml
+- include: federation.yml
+  when: rabbitmq_federation
+- include: test.yml

@@ -1,6 +1,0 @@
----
-
-- name: Ensure Rabbitmq-server is installed on RHEL.
-  yum:
-    name: rabbitmq-server
-    state: installed
